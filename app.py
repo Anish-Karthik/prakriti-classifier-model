@@ -1,9 +1,7 @@
-import json
 import pickle
 
-from flask import Flask,request,app,jsonify,url_for,render_template
+from flask import Flask,request,app,jsonify
 import numpy as np
-import pandas as pd
 
 app=Flask(__name__)
 ## Load the model
@@ -20,4 +18,4 @@ def predict_api():
     return jsonify(output[0])
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
